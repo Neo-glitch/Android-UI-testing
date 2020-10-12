@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        applicationId "com.neo.androiduitestsespresso"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.0.0-RC1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
+
+    // GSON
+    implementation 'com.google.code.gson:gson:2.8.0'
+
+    // Yelp v2 API client library for Android
+    implementation 'com.yelp.clientlib:yelp-android:3.0.0'
+
+    // Note that the below dependency is ONLY non-"androidTestCompile" because we
+    // are doing the ugly thing and mixing Idling Resource code with our app code.
+    implementation 'com.android.support.test.espresso:espresso-idling-resource:3.0.2'
+
+    // for recyclerView, drawer or accessibilty checks actions for test
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0'
+
+    // for web View support in our UI tests
+    androidTestImplementation 'androidx.test.espresso:espresso-web:3.3.0'
+
+    // to synchronizing background tasks
+    androidTestImplementation 'androidx.test.espresso:espresso-idling-resource:3.0.2'
+
+    // for validating intents
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.3.0'
+
+
+
+
+}
