@@ -75,7 +75,7 @@ public class BeverageListActivityTest {
         onView(withId(R.id.beverages_recycler))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(6, click()));
 
-        intended(hasComponent(BeverageDetailActivity.class.getName()));
+        intended(hasComponent(BeverageDetailActivity.class.getName()));  // to verify that beverageDetailActivity is open now
 
         pressBack();
     }

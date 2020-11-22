@@ -39,7 +39,7 @@ public class CoffeeShopListActivityTest {
 
     @Rule
     public IntentsTestRule<CoffeeShopListActivity> intentsTestRule = new IntentsTestRule<CoffeeShopListActivity>(CoffeeShopListActivity.class) {
-        // captures intent to start this activity and load the intent with list of fake CoffeeShops
+        // captures intent to start this activity and load the intent with list of fake CoffeeShops and init and releases this intent after each test fun
         // since test should not make network calls
 //        @Override
 //        protected Intent getActivityIntent() {

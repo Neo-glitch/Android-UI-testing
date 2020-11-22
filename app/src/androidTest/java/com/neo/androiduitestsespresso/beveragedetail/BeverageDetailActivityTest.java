@@ -37,7 +37,7 @@ public class BeverageDetailActivityTest {
                 Context targetContext = InstrumentationRegistry
                         .getInstrumentation()
                         .getTargetContext();
-                // intent sent to the activity before starting it up for test
+                // modify intent to startActivity by adding extras(Beverage obj)
                 Intent result = new Intent(targetContext, BeverageDetailActivity.class);
                 result.putExtra(BEVERAGE_MODEL_BUNDLE_KEY, beverage);
                 return result;
